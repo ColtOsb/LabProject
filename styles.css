@@ -1,0 +1,246 @@
+/* Reset & variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2ea4d7;
+    --cream: #f5e9d8;
+    --brown: #3e2c23;
+    --orange: #e76f2e;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--brown);
+}
+
+/* Layout */
+.layout {
+    flex: 1; /* make layout take remaining height */
+    min-height: 0; /* avoid overflow issues */
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: var(--brown);
+    color: var(--cream);
+    padding: 1rem;
+}
+
+.sidebar .logo {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.main-nav a {
+    display: block;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-label {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+}
+
+.site-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Content sections */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Home / hero / resources */
+.hero {
+    padding: 2rem 0 1rem;
+}
+
+.hero h2 {
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    max-width: 30rem;
+}
+
+.hero .container {
+    background-color: #f9f0e2; /* lighter cream than var(--cream) */
+    border: 3px solid var(--blue);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+}
+
+.resources {
+    padding: 1rem 0 2rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.resource-card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* About & team */
+.about {
+    padding: 1rem 0 1.5rem;
+}
+
+.team {
+    padding: 1rem 0 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-member {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.team-member .avatar {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role-notes {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Login */
+.login {
+    padding: 1rem 0 2rem;
+}
+
+.login-form {
+    max-width: 320px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.login-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 0.4rem;
+    border: 1px solid #d1d5db;
+    font: inherit;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 1px rgba(46, 164, 215, 0.3);
+}
+
+.login-form .button {
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.login-form button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Add resource page */
+.add-resource {
+    padding: 1rem 0 2rem;
+}
+
+.add-form {
+    max-width: 480px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.add-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.add-form input,
+.add-form textarea,
+.add-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 0.4rem;
+    border: 1px solid #d1d5db;
+    font: inherit;
+}
+
+.add-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Footer */
+.site-footer {
+    padding: 1rem 0;
+    background-color: var(--brown);
+    color: var(--cream);
+    font-size: 0.85rem;
+    text-align: center;
+}

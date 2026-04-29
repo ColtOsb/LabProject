@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Resource Hub - Add Resource</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1 class="logo">Student Resource Hub</h1>
+        <nav class="main-nav">
+          <div class="nav-label">Main</div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="nav-label">Resources</div>
+          <a href="index.html" class="sub-link">Textbooks</a>
+          <a href="index.html" class="sub-link">Mental Health</a>
+          <a href="index.html" class="sub-link">Tech Support</a>
+          <a href="index.html" class="sub-link">Career Services</a>
+          <div class="nav-label">Account</div>
+          <a href="login.html">Login</a>
+          <a href="add.html">Add Resources</a>
+        </nav>
+      </aside>
+
+      <main class="site-main">
+        <section class="add-resource">
+          <div class="container">
+            <h2>Add a Resource</h2>
+            <p>This is a placeholder form for Demo 1. It does not submit anywhere yet.</p>
+
+            <form class="add-form">
+              <label>
+                Resource Name
+                <input type="text" placeholder="e.g. Open Library" />
+              </label>
+
+              <label>
+                Category
+                <select>
+                  <option>Textbooks</option>
+                  <option>Mental Health</option>
+                  <option>Tech Support</option>
+                  <option>Career Services</option>
+                </select>
+              </label>
+
+              <label>
+                URL
+                <input type="url" placeholder="https://example.com" />
+              </label>
+
+              <label>
+                Short Description
+                <textarea placeholder="What does this resource offer?" ></textarea>
+              </label>
+
+              <button type="submit" class="button primary" disabled>
+                Submit (disabled for demo)
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Student Resource Hub</p>
+      </div>
+    </footer>
+  </body>
+</html>
