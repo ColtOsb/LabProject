@@ -28,7 +28,7 @@ ddev import-db --src=dump.sql  # Creates users + resources tables
 ```  
 
 ### 4. Access App  
-- **Site**: https://student-resource-hub.ddev.site  
+- **Site**: `ddev launch`
 - **DB**: `ddev mysql` (user: `db`, pass: `db`)  
 
 ## Features  
