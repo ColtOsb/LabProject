@@ -157,7 +157,27 @@ body {
     color: #6b7280;
 }
 
-/* Login */
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.95rem;
+}
+
+.button.primary {
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+.button.primary:hover {
+    background-color: #2591be;
+}
+
+/* Login / Register */
 .login {
     padding: 1rem 0 2rem;
 }
@@ -196,9 +216,38 @@ body {
     margin-top: 0.75rem;
 }
 
-.login-form button[disabled] {
-    opacity: 0.6;
-    cursor: not-allowed;
+/* Form feedback messages */
+.form-message {
+    display: none;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.4rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.form-message.error {
+    display: block;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+}
+
+.form-message.success {
+    display: block;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #15803d;
+}
+
+/* "Don't have an account?" helper link */
+.form-link {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.form-link a {
+    color: var(--blue);
 }
 
 /* Add resource page */
@@ -234,6 +283,19 @@ body {
 .add-form textarea {
     resize: vertical;
     min-height: 80px;
+}
+
+.add-form input:focus,
+.add-form textarea:focus,
+.add-form select:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 1px rgba(46, 164, 215, 0.3);
+}
+
+.add-form .button {
+    width: 100%;
+    margin-top: 0.75rem;
 }
 
 /* Footer */
