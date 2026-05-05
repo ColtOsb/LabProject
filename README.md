@@ -47,13 +47,14 @@ ddev logs -s web # Nginx/PHP errors
 ddev restart # Reset  
 
 ## File Structure
-├── public/ # Docroot (index.php router)  
+├── public/ # Docroot: index.php  scripts/auth.js scripts/resources.js  styles.css  
 ├── config/ # db.php  
-├── controllers/ # UserController.php, ResourceController.php  
-├── models/ # User.php, Resource.php  
-├── views/ # login.php, home.php, add.php  
-├── styles.css # Responsive design  
-└── dump.sql # Empty DB schema (users + resources)  
+├── controllers/ # ResourceController.php  UserController.php  
+├── models/ # Resource.php  User.php  
+├── views/ # about.php  add.php  admin.php  edit_resource.php  edit_user.php  home.php  login.php  partials/sidebar.php  register.php  
+└── dump.sql # Sparesly Populated DB schema (users + resources, admin)  
+└── .htaccess # Rerouting  
+
 
 
 **Production ready** → just point Apache/Nginx docroot to `public/`!  
