@@ -67,7 +67,7 @@ class ResourceController
                 $post["description"],
             );
             $_SESSION["success"] = "Resource updated successfully";
-            header("Location: ?page=home");
+            header("Location: ?page=admin");
             exit();
         }
     }
@@ -76,7 +76,7 @@ class ResourceController
     {
         $this->resource->delete($id);
         $_SESSION["success"] = "Resource deleted successfully";
-        header("Location: ?page=home");
+        header("Location: ?page=admin");
         exit();
     }
 }

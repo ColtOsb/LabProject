@@ -8,23 +8,7 @@
     </head>
     <body>
         <div class="layout">
-            <aside class="sidebar">
-              <h1 class="logo">Student Resource Hub</h1>
-              <nav class="main-nav">
-                <div class="nav-label">Main</div>
-                <a href="?page=home">Home</a>
-                <a href="?page=about">About</a>
-                <div class="nav-label">Resources</div>
-                <a href="?page=home" class="sub-link">Textbooks</a>
-                <a href="?page=home" class="sub-link">Mental Health</a>
-                <a href="?page=home" class="sub-link">Tech Support</a>
-                <a href="?page=home" class="sub-link">Career Services</a>
-                <div class="nav-label">Account</div>
-                <a href="?page=login">Login</a>
-                <a href="?page=register">Register</a>
-                <a href="?page=add">Add Resources</a>
-              </nav>
-            </aside>
+            <?php include __DIR__ . "/partials/sidebar.php"; ?>
 
             <main class="site-main">
                 <section class="login">
@@ -95,6 +79,6 @@
             </div>
         </footer>
 
-        <script src="auth.js"></script>
+        <script src="./scripts/auth.js"></script>
     </body>
 </html>

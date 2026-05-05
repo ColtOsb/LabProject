@@ -6,77 +6,59 @@
     <title>Student Resource Hub - Register</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-
   <body>
     <div class="layout">
-      <aside class="sidebar">
-        <h1 class="logo">Student Resource Hub</h1>
-        <nav class="main-nav">
-          <div class="nav-label">Main</div>
-          <a href="?page=home">Home</a>
-          <a href="?page=about">About</a>
-          <div class="nav-label">Resources</div>
-          <a href="?page=home" class="sub-link">Textbooks</a>
-          <a href="?page=home" class="sub-link">Mental Health</a>
-          <a href="?page=home" class="sub-link">Tech Support</a>
-          <a href="?page=home" class="sub-link">Career Services</a>
-          <div class="nav-label">Account</div>
-          <a href="?page=login">Login</a>
-          <a href="?page=register">Register</a>
-          <a href="?page=add">Add Resources</a>
-        </nav>
-      </aside>
-
+        <?php include __DIR__ . "/partials/sidebar.php"; ?>
       <main class="site-main">
-        <?php if (isset($_SESSION["error"])): ?>
-            <div class="alert alert-error"><?php
-            echo $_SESSION["error"];
-            unset($_SESSION["error"]);
-            ?></div>
-        <?php endif; ?>
-
         <section class="login">
           <div class="container">
             <h2>Create an Account</h2>
 
+            <?php if (isset($_SESSION["error"])): ?>
+                <div class="form-message error"><?php
+                echo htmlspecialchars($_SESSION["error"]);
+                unset($_SESSION["error"]);
+                ?></div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION["success"])): ?>
+                <div class="form-message success"><?php
+                echo htmlspecialchars($_SESSION["success"]);
+                unset($_SESSION["success"]);
+                ?></div>
+            <?php endif; ?>
+
             <form class="login-form" id="register-form" method="POST" action="?page=register" novalidate>
+              <div id="form-message" class="form-message" role="alert"></div>
 
               <label for="name">Name</label>
               <input id="name" type="text" name="name" placeholder="Your name" required />
-              <div class="error-msg" id="err-name">3-30 chars (letters, numbers, _)</div>
 
               <label for="email">Email</label>
               <input id="email" type="email" name="email" placeholder="you@example.com" required />
-              <div class="error-msg" id="err-email">Valid email required</div>
-
 
               <label for="password">Password</label>
-              <input id="password" type="password" name="password" placeholder="password" required />
-               <div class="error-msg" id="err-password">8+ characters</div>
+              <input id="password" type="password" name="password" placeholder="8+ characters" required />
 
               <label for="confirm_password">Confirm Password</label>
               <input id="confirm_password" type="password" name="confirm_password" placeholder="Re-enter password" required />
-              <div class="error-msg" id="err-confirm">Passwords must match</div>
-
 
               <button type="submit" class="button primary">Create Account</button>
-
-
             </form>
+
+            <?php if (!isset($_SESSION["user_id"])): ?>
             <p class="form-link">
               Already have an account? <a href="?page=login">Login</a>
             </p>
+            <?php endif; ?>
           </div>
         </section>
       </main>
     </div>
-
     <footer class="site-footer">
       <div class="container">
         <p>&copy; 2026 Student Resource Hub</p>
       </div>
     </footer>
-
     <script src="./scripts/auth.js"></script>
   </body>
 </html>
